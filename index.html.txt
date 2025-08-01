@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Supabase Connection</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script>
+    // Put your API values here
+    const SUPABASE_URL = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZibXpibXR2dXhsbG1pb2lvb3RiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM5NTQ2MzQsImV4cCI6MjA2OTUzMDYzNH0.mTV4p1suzXqLUzompDcXwWl6rBsyMRC54YyNOKlmGbY';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZibXpibXR2dXhsbG1pb2lvb3RiIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1Mzk1NDYzNCwiZXhwIjoyMDY5NTMwNjM0fQ.KtDv_MwidPOaf97j5YrWkqzSf8gTUOXYIvuzK9dT75k';
+
+    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    async function getReports() {
+      let { data, error } = await supabase
+        .from('daily_reports')
+        .select('*');
+
+      if (error) {
+        alert('Error: ' + error.message);
+      } else {
+        alert(JSON.stringify(data));
+      }
+    }
+  </script>
+</head>
+<body>
+  <button onclick="getReports()">Show Daily Reports</button>
+</body>
+</html>
