@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Report - B-Tech 4th Year</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Real social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css for professional animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1 class="main-title">DAILY REPORT - 4TH YEAR</h1>
+            <h2 class="college-name">KAKINADA INSTITUTE OF ENGINEERING TECHNOLOGIES</h2>
+            <h3 class="subtitle">IV B-TECH CLASS SCHEDULE - DAILY REPORT</h3>
+            
+            <!-- Top-right menu -->
+            <div class="menu-container">
+                <button class="menu-btn" id="menuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="menu-dropdown hidden" id="menuDropdown">
+                    <button class="menu-item" id="exportBtn">
+                        <i class="fas fa-file-csv"></i> Export CSV
+                    </button>
+                    <button class="menu-item" id="accessBtn">
+                        <i class="fas fa-users-cog"></i> Manage Access
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Date Picker -->
+        <div class="date-section">
+            <label for="reportDate" class="form-label">Report Date:</label>
+            <input type="date" id="reportDate" class="form-control date-input">
+        </div>
+
+        <!-- Single Edit Button positioned at top-right of first table -->
+        <div class="global-edit-container">
+            <button class="btn btn--primary global-edit-btn" id="globalEditBtn">
+                <i class="fas fa-edit"></i> EDIT
+            </button>
+        </div>
+
+        <!-- Table 1: CRT Classes -->
+        <section class="table-section">
+            <div class="table-header">
+                <h4 class="table-heading">CRT CLASSES</h4>
+            </div>
+            <div class="table-wrapper">
+                <table class="report-table" id="table1">
+                    <thead>
+                        <tr>
+                            <th>CLASS</th>
+                            <th>1ST HOUR (9:00-10:30)</th>
+                            <th>2ND HOUR (10:30-12:00)</th>
+                            <th>3RD HOUR (1:00-4:00)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-row-odd">
+                            <td class="class-column">AID(GCC)</td>
+                            <td class="editable-cell" data-table="1" data-row="0" data-col="1"></td>
+                            <td class="editable-cell" data-table="1" data-row="0" data-col="2"></td>
+                            <td class="editable-cell" data-table="1" data-row="0" data-col="3"></td>
+                        </tr>
+                        <tr class="table-row-even">
+                            <td class="class-column">CSM(K-HUB)</td>
+                            <td class="editable-cell" data-table="1" data-row="1" data-col="1"></td>
+                            <td class="editable-cell" data-table="1" data-row="1" data-col="2"></td>
+                            <td class="editable-cell" data-table="1" data-row="1" data-col="3"></td>
+                        </tr>
+                        <tr class="table-row-odd">
+                            <td class="class-column">CSD(CYBER CREW)</td>
+                            <td class="editable-cell" data-table="1" data-row="2" data-col="1"></td>
+                            <td class="editable-cell" data-table="1" data-row="2" data-col="2"></td>
+                            <td class="editable-cell" data-table="1" data-row="2" data-col="3"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Table 2: Special CRT Classes -->
+        <section class="table-section table-gap">
+            <div class="table-wrapper">
+                <table class="report-table" id="table2">
+                    <thead>
+                        <tr>
+                            <th>CLASS</th>
+                            <th>1ST HOUR (9:00-12:00)</th>
+                            <th>2ND HOUR (1:00-2:30)</th>
+                            <th>3RD HOUR (2:30-4:00)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-row-odd">
+                            <td class="class-column">CAI(A-212)</td>
+                            <td class="editable-cell" data-table="2" data-row="0" data-col="1"></td>
+                            <td class="editable-cell" data-table="2" data-row="0" data-col="2"></td>
+                            <td class="editable-cell" data-table="2" data-row="0" data-col="3"></td>
+                        </tr>
+                        <tr class="table-row-even">
+                            <td class="class-column">CSC(seminar hall-2)</td>
+                            <td class="editable-cell" data-table="2" data-row="1" data-col="1"></td>
+                            <td class="editable-cell" data-table="2" data-row="1" data-col="2"></td>
+                            <td class="editable-cell" data-table="2" data-row="1" data-col="3"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Table 3: Non-CRT Classes -->
+        <section class="table-section table-gap">
+            <div class="table-header">
+                <h4 class="table-heading">NON CRT CLASSES DAILY REPORT</h4>
+            </div>
+            <div class="table-wrapper">
+                <table class="report-table" id="table3">
+                    <thead>
+                        <tr>
+                            <th>CLASS</th>
+                            <th>1ST HOUR (8:40-10:30)</th>
+                            <th>2ND HOUR (10:30-12:00)</th>
+                            <th>3RD HOUR (1:30-2:30)</th>
+                            <th>4TH HOUR (2:30-4:00)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-row-odd">
+                            <td class="class-column">nonCRT class 1 (A-210)</td>
+                            <td class="editable-cell" data-table="3" data-row="0" data-col="1"></td>
+                            <td class="editable-cell" data-table="3" data-row="0" data-col="2"></td>
+                            <td class="editable-cell" data-table="3" data-row="0" data-col="3"></td>
+                            <td class="editable-cell" data-table="3" data-row="0" data-col="4"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Action Buttons - Share and Save below all tables -->
+        <section class="action-section">
+            <div class="button-group">
+                <button class="btn btn--secondary" id="shareBtn">
+                    <i class="fas fa-share-alt"></i> SHARE
+                </button>
+                <button class="btn btn--primary" id="saveBtn">
+                    <i class="fas fa-save"></i> SAVE
+                </button>
+            </div>
+            <div class="button-group secondary-actions">
+                <button class="btn btn--outline" id="newReportBtn">
+                    <i class="fas fa-plus"></i> NEW REPORT
+                </button>
+                <button class="btn btn--outline" id="viewReportsBtn">
+                    <i class="fas fa-history"></i> View Saved Reports
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Success Toast -->
+    <div class="toast hidden" id="successToast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="toastMessage">Saved successfully!</span>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner hidden" id="loadingSpinner">
+        <div class="spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+        </div>
+        <span>Processing...</span>
+    </div>
+
+    <!-- Edit Modal for CRT classes -->
+    <div class="modal hidden" id="editModal">
+        <div class="modal-content animate__animated">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Cell</h5>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Session Type:</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="sessionType" value="class" checked>
+                            <i class="fas fa-users"></i> CLASS
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="sessionType" value="practice">
+                            <i class="fas fa-laptop-code"></i> PRACTICE SESSION
+                        </label>
+                    </div>
+                </div>
+                
+                <div id="classFields">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="crtFaculty" placeholder="CRT faculty name" autocomplete="new-password">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="whichClass" placeholder="Which class" autocomplete="new-password">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="collegeFaculty" placeholder="College faculty name" autocomplete="new-password">
+                    </div>
+                </div>
+                
+                <div id="practiceFields" style="display: none;">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="practiceFaculty" placeholder="College faculty name" autocomplete="new-password">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--secondary" id="modalCancel">
+                    <i class="fas fa-times"></i> Cancel
+                </button>
+                <button class="btn btn--primary" id="modalSave">
+                    <i class="fas fa-check"></i> Save
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal for Non-CRT classes (simplified) -->
+    <div class="modal hidden" id="editModalNonCRT">
+        <div class="modal-content animate__animated">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Non-CRT Class</h5>
+                <button class="modal-close" id="modalCloseNonCRT">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="nonCrtClass" placeholder="Class" autocomplete="new-password">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="nonCrtFaculty" placeholder="College Faculty" autocomplete="new-password">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--secondary" id="modalCancelNonCRT">
+                    <i class="fas fa-times"></i> Cancel
+                </button>
+                <button class="btn btn--primary" id="modalSaveNonCRT">
+                    <i class="fas fa-check"></i> Save
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div class="modal hidden" id="authModal">
+        <div class="modal-content animate__animated">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-lock"></i> Authentication Required
+                </h5>
+            </div>
+            <div class="modal-body">
+                <p>Please enter your email to continue:</p>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="authEmail" placeholder="Enter your email" autocomplete="new-password">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--primary" id="authSubmit">
+                    <i class="fas fa-sign-in-alt"></i> Submit
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CSV Export Modal with Excel options -->
+    <div class="modal hidden" id="csvModal">
+        <div class="modal-content animate__animated">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-file-excel"></i> CSV Export Complete
+                </h5>
+                <button class="modal-close" id="csvModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="export-status">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <p><strong>Your CSV file has been generated successfully!</strong></p>
+                    
+                    <div class="download-section">
+                        <p><strong>File:</strong> <span id="fileName"></span></p>
+                        
+                        <div class="download-options">
+                            <button class="btn btn--primary" id="downloadBtn">
+                                <i class="fas fa-download"></i> Download CSV
+                            </button>
+                            <button class="btn btn--secondary" id="openExcelBtn">
+                                <i class="fas fa-file-excel"></i> Open in Excel
+                            </button>
+                        </div>
+                        
+                        <div class="download-info">
+                            <h6><i class="fas fa-info-circle"></i> Download Location:</h6>
+                            <p>Files are typically saved to your <strong>Downloads</strong> folder</p>
+                            <p>Path: <code id="downloadPath">~/Downloads/</code></p>
+                        </div>
+                        
+                        <div class="excel-preview" id="excelPreview">
+                            <h6><i class="fas fa-eye"></i> Excel Preview:</h6>
+                            <div class="preview-content" id="previewContent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Share Modal with real social media icons -->
+    <div class="modal hidden" id="shareModal">
+        <div class="modal-content animate__animated">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-share-alt"></i> Share Application
+                </h5>
+                <button class="modal-close" id="shareModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="share-options">
+                    <div class="share-section">
+                        <h6><i class="fas fa-share-nodes"></i> Social Media Platforms</h6>
+                        <div class="share-buttons-grid">
+                            <button class="share-btn whatsapp-btn" id="shareWhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                                WhatsApp
+                            </button>
+                            <button class="share-btn gmail-btn" id="shareGmail">
+                                <i class="fas fa-envelope"></i>
+                                Gmail
+                            </button>
+                            <button class="share-btn facebook-btn" id="shareFacebook">
+                                <i class="fab fa-facebook-f"></i>
+                                Facebook
+                            </button>
+                            <button class="share-btn twitter-btn" id="shareTwitter">
+                                <i class="fab fa-twitter"></i>
+                                Twitter/X
+                            </button>
+                            <button class="share-btn linkedin-btn" id="shareLinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                                LinkedIn
+                            </button>
+                            <button class="share-btn telegram-btn" id="shareTelegram">
+                                <i class="fab fa-telegram-plane"></i>
+                                Telegram
+                            </button>
+                        </div>
+                    </div>
+                    <div class="share-section">
+                        <h6><i class="fas fa-link"></i> Direct Actions</h6>
+                        <div class="share-buttons-grid">
+                            <button class="share-btn copy-btn" id="copyLink">
+                                <i class="fas fa-copy"></i>
+                                Copy Link
+                            </button>
+                            <button class="share-btn device-btn" id="deviceShare">
+                                <i class="fas fa-mobile-alt"></i>
+                                Device Share
+                            </button>
+                        </div>
+                    </div>
+                    <div class="share-url">
+                        <label class="form-label">Application URL:</label>
+                        <input type="text" class="form-control" id="shareUrl" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Access Management Modal -->
+    <div class="modal hidden" id="accessModal">
+        <div class="modal-content animate__animated">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-users-cog"></i> Manage Access
+                </h5>
+                <button class="modal-close" id="accessModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="accessModalBody">
+                <!-- Initial email verification -->
+                <div id="emailVerificationStep">
+                    <div class="step-header">
+                        <h6><i class="fas fa-envelope-circle-check"></i> Email Verification Required</h6>
+                        <p>Please enter your authorized email to continue:</p>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="accessVerifyEmail" placeholder="Enter your authorized email" autocomplete="new-password">
+                    </div>
+                    <button class="btn btn--primary" id="verifyEmailBtn">
+                        <i class="fas fa-check"></i> Verify Email
+                    </button>
+                </div>
+
+                <!-- Password verification (after email verified) -->
+                <div id="passwordVerificationStep" class="hidden">
+                    <div class="step-header">
+                        <h6><i class="fas fa-key"></i> Password Required</h6>
+                        <p>Enter password to view authorized emails:</p>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="accessPassword" placeholder="Enter password" autocomplete="new-password">
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn btn--primary" id="verifyPasswordBtn">
+                            <i class="fas fa-unlock"></i> Unlock
+                        </button>
+                        <button class="btn btn--outline" id="forgotPasswordBtn">
+                            <i class="fas fa-question-circle"></i> Forgot Password?
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Access management (after both verifications) -->
+                <div id="accessManagementStep" class="hidden">
+                    <div class="access-section">
+                        <h6><i class="fas fa-user-check"></i> Current Status</h6>
+                        <div class="current-status">
+                            <p><strong>Logged in as:</strong> <span id="currentUserEmail">None</span></p>
+                            <p><strong>Access Level:</strong> <span id="currentAccessLevel">Unauthorized</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="access-section">
+                        <h6><i class="fas fa-users"></i> Authorized Emails</h6>
+                        <div id="authorizedEmailsList" class="emails-list"></div>
+                        
+                        <div class="add-email-section">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="newEmail" placeholder="Enter email address to add" autocomplete="new-password">
+                            </div>
+                            <button class="btn btn--primary" id="addEmailBtn">
+                                <i class="fas fa-user-plus"></i> Add Email
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="access-section">
+                        <h6><i class="fas fa-cog"></i> Security Options</h6>
+                        <div class="security-actions">
+                            <button class="btn btn--secondary" id="changePasswordBtn">
+                                <i class="fas fa-key"></i> Change Password
+                            </button>
+                            <button class="btn btn--outline" id="resetPasswordBtn">
+                                <i class="fas fa-redo"></i> Reset Password
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Password Change Modal -->
+    <div class="modal hidden" id="passwordChangeModal">
+        <div class="modal-content animate__animated">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-key"></i> Change Password
+                </h5>
+                <button class="modal-close" id="passwordChangeClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Current Password:</label>
+                    <input type="password" class="form-control" id="currentPassword" placeholder="Enter current password" autocomplete="new-password">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">New Password:</label>
+                    <input type="password" class="form-control" id="newPassword" placeholder="Enter new password" autocomplete="new-password">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Confirm New Password:</label>
+                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm new password" autocomplete="new-password">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--secondary" id="passwordChangeCancel">
+                    <i class="fas fa-times"></i> Cancel
+                </button>
+                <button class="btn btn--primary" id="passwordChangeSave">
+                    <i class="fas fa-save"></i> Change Password
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Saved Reports Modal -->
+    <div class="modal hidden" id="reportsModal">
+        <div class="modal-content modal-large animate__animated">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-history"></i> Saved Reports
+                </h5>
+                <button class="modal-close" id="reportsModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="reportsList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
